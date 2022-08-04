@@ -1,4 +1,4 @@
-const { generateOTP ,fast2sms} = require('../services/OTP'); 
+const { generateOTP ,fast2sms} = require('../services/otp'); 
 const User = require('../models/User');
 
 
@@ -19,7 +19,7 @@ exports.createNewUser = async (req, res, next) => {
 
     // create new user
     const createUser = new User({
-      phone
+      phoneNumber : phone
     });
 
     // save user
@@ -37,7 +37,7 @@ exports.createNewUser = async (req, res, next) => {
     // generate otp
     const otp = generateOTP(6);
     // save otp to user collection
-    user.phoneOtp = otp;
+    user.otp = otp;
     await user.save();
     // send otp to phone number
     await fast2sms(
@@ -64,13 +64,13 @@ exports.verifyPhoneOtp = async (req, res, next) => {
       return;
     }
 
-    if (user.phoneOtp !== otp) {
+    if (user.otp !== otp) {
       next({ status: 400, message: "INCORRECT_OTP_ERR" });
       return;
     }
     // const token = createJwtToken({ userId: user._id });
 
-    user.phoneOtp = "";
+    user.otp = "";
     await user.save();
 
     res.status(201).json({
