@@ -10,7 +10,12 @@
     },
     "author": "pujari.tandeep2308@gmail.com",
     "dependencies": {
-        "express": "^4.12.3"
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "fast-two-sms": "^3.0.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.12.3",
     },
     "engines": {
         "node": ">=4"
