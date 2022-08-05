@@ -1,6 +1,7 @@
 const { generateOTP ,fast2sms} = require('../services/otp'); 
 const User = require('../models/User');
 
+// const { encrypt, compare } = require('../services/crypto');
 
 /**
  *--------------------- create new user ---------------------------------
@@ -35,18 +36,18 @@ exports.createNewUser = async (req, res, next) => {
     });
 
     // generate otp
-    const otp = generateOTP(6);
+    // const otp = generateOTP(6);
     // save otp to user collection
-    user.otp = otp;
+    user.otp = 123456;
     await user.save();
     // send otp to phone number
-    await fast2sms(
-      {
-        message: `Your OTP is ${otp}`,
-        contactNumber: user.phone,
-      },
-      next
-    );
+    // await fast2sms(
+    //   {
+    //     message: `Your OTP is ${otp}`,
+    //     contactNumber: user.phone,
+    //   },
+    //   next
+    // );
   } catch (error) {
     next(error);
   }
@@ -79,6 +80,72 @@ exports.verifyPhoneOtp = async (req, res, next) => {
       data: {
         userId: user._id,
       },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
+ * Fetch User Data
+ */
+
+ exports.fetchCurrentUser = async (req, res, next) => {
+  try {
+    const { user } = req.body;
+
+    console.log("user : "  , user);
+    const userData  = await User.findById(user);
+    console.log("User data :: ", userData);
+
+    res.status(200).json({
+      type: "success",
+      message: "fetch current user",
+      data: {
+        user:userData,
+      },
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+/**
+ * Register using email
+ */
+
+ exports.registerViaEmail = async (req, res, next) => {
+  try {
+    console.log("Inside register Vial Email");
+    const { name , email , password , phoneNumber } = req.body;
+
+
+    const phoneExist = await User.findOne({ phoneNumber });
+
+
+    if (phoneExist) {
+      next({ status: 400, message: "PHONE_ALREADY_EXISTS_ERR" });
+      return;
+    }
+    
+    // const hashedPassword = await encrypt(password);
+
+    const createUser = new User({
+      phoneNumber : phoneNumber,
+      email : email,
+      password : password,
+      name: name
+    });
+
+    // save user
+
+    const user = await createUser.save();
+
+     res.status(200).json({
+      type: "success",
+      message: "Account created, Proceed to verify account",
+      data: user
     });
   } catch (error) {
     next(error);

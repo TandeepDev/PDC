@@ -1,0 +1,10 @@
+#dependencies
+
+./middleware/node_module
+
+
+# System Files
+.DS_Store
+Thumbs.db
+
+*.vscode*
