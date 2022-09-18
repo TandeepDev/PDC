@@ -1,53 +1,38 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import postData from '../../features/heplers';
+import { login } from '../../features/uesrSlice';
 import './Email-SignIn.css';
-function EmailSignIn() {
+
+function EmailSignIn({ Email }) {
   const navigate = useNavigate();
   const [click, setClick] = useState(false);
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState(Email.Email);
   const [password, setPassword] = useState('');
-  async function postData(url = '', data = {}) {
-    // Default options are marked with *
-    const response = await fetch(url, {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'same-origin', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json',
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      redirect: 'follow', // manual, *follow, error
-      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify(data), // body data type must match "Content-Type" header
-    });
-    return response.json(); // parses JSON response into native JavaScript objects
-  }
+  const dispatch = useDispatch();
   useEffect(() => {
-    const emails = localStorage.getItem('email');
-    setEmail(emails);
+    // console.log(Email);
   }, [click]);
-
   const closeModal = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     setClick(true);
     document.querySelector('.Emailmodal').classList.add('hideEmailModal');
-    navigate('/');
-    window.location.reload();
+    // navigate('/');
+    // window.location.reload();
   };
   const emailSignIn = async (e) => {
     e.preventDefault();
     await postData('http://35.165.105.151:3000/auth/emailLogin', {
-      email: email,
+      email: Email.Email,
       password: password,
     })
       .then((data) => {
-        console.log(data); // JSON data parsed by
-        localStorage.setItem('isloggedin', 'yes');
-        closeModal();
+        dispatch(login({ data }));
+        navigate('/');
       })
       .catch((error) => {
-        console.error('Error:', error);
+        return alert(error);
       });
   };
   return (
@@ -73,23 +58,22 @@ function EmailSignIn() {
               <i className='fas fa-envelope prefix grey-text'></i>
               <input
                 type='text'
-                id='defaultForm'
-                value={email}
+                id='EmailSignIn'
+                value={Email}
                 readOnly
-                // onChange={(e) => setValue(e.target.value)}
                 className='form-control validate'
               />
               <label
                 data-error='wrong'
                 data-success='right'
-                htmlFor='defaultForm'
+                htmlFor='EmailSignIn'
               ></label>
             </div>
             <div className='md-form mb-1'>
               <i className='fas fa-lock prefix grey-text'></i>
               <input
                 type='password'
-                id='defaultForm-pass'
+                id='EmailSignIn-pass'
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder='Enter Your Password'
                 className='form-control validate'
@@ -97,10 +81,8 @@ function EmailSignIn() {
               <label
                 data-error='wrong'
                 data-success='right'
-                htmlFor='defaultForm-pass'
-              >
-                {/* Your password */}
-              </label>
+                htmlFor='EmailSignIn-pass'
+              ></label>
             </div>
           </div>
           <div className='modal-footer d-flex justify-content-center'>

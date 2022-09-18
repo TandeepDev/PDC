@@ -1,23 +1,31 @@
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './App.css';
+import { selectUser } from './features/uesrSlice';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Home from './Pages/Home/Home';
 
 function App() {
-  var user = localStorage.getItem('userId');
-  var email = localStorage.getItem('email');
-
+  // const [Obj, setObj] = useState({});
+  // let obj;
+  // const getObj = (object) => {
+  //   obj = object;
+  //   setObj(obj);
+  // };
+  const user = useSelector(selectUser);
+  useEffect(() => {
+    console.log('user is ', user);
+  }, []);
   return (
     <BrowserRouter>
       <Routes>
         <Route
           // exact
           path='/'
-          element={user !== null || email !== null ? <Dashboard /> : <Home />}
+          element={user !== null ? <Dashboard /> : <Home />}
         />
-        {/* <Route path='/' element={<Home />} /> */}
-        {/* <Route path='/dashboard' element={<Dashboard />}></Route> */}
       </Routes>
     </BrowserRouter>
   );

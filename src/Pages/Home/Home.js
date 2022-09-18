@@ -6,7 +6,7 @@ import MidSection from '../../component/MidSection/MidSection';
 import Navbar from '../../component/Navbar/Navbar';
 import SlideShow from '../../component/SlideShow/SlideShow';
 import './Home.css';
-function Home() {
+function Home({ getObj }) {
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function Home() {
   };
   return (
     <div className='Home'>
-      <Navbar />
+      <Navbar getObj={getObj} />
       <SlideShow />
       <h1 id='servies' className='big-headings'>
         Services

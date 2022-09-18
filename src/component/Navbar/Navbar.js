@@ -2,25 +2,18 @@ import React from 'react';
 import './Navbar.css';
 import $ from 'jquery';
 import Login from '../Login/Login';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { logout, selectUser } from '../../features/uesrSlice';
 function Navbar() {
-  const [loggedIn, setLoggedIn] = useState('');
-  const [click, setClick] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = useSelector(selectUser);
 
-  useEffect(() => {
-    const loggedIns = localStorage.getItem('isloggedin');
-    setLoggedIn(loggedIns);
-  }, [click, loggedIn]);
   const logOut = (e) => {
     e.preventDefault();
-    localStorage.clear();
     navigate('/');
-    setClick(true);
-    window.location.reload();
+    dispatch(logout());
   };
   $(document).ready(function () {
     // Fix for "hamburger menu" not collapsing after a click on menu item
@@ -104,14 +97,22 @@ function Navbar() {
               </li>
             </ul>
           </div>
-          <div className='buttons'>
-            {loggedIn !== '' ? (
-              <button className='btn' href='#logout' onClick={logOut}>
-                Logout
-              </button>
-            ) : (
+          {user !== null ? (
+            <div className='buttons'>
               <button
                 className='btn'
+                id='logoutBtn'
+                onClick={logOut}
+                href='#logout'
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <div className='buttons'>
+              <button
+                className='btn'
+                id='signInBtn'
                 data-toggle='modal'
                 data-target='#modalLoginForm'
                 data-backdrop='static'
@@ -120,8 +121,8 @@ function Navbar() {
               >
                 LOGIN / SIGNUP
               </button>
-            )}
-          </div>
+            </div>
+          )}
 
           <button className='navbar-toggler' type='button'>
             <span className='navbar-toggler-icon'></span>

@@ -1,42 +1,22 @@
 import React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import postData from '../../features/heplers';
+import { login } from '../../features/uesrSlice';
 import './EmailSignUp.css';
-function EmailSignUp() {
+function EmailSignUp(Email) {
   const navigate = useNavigate();
-  const [click, setClick] = useState(false);
-  const [email, setEmail] = useState('');
   const [fullName, setFullName] = useState('');
   const [username, setUsername] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
   const [cnfPassword, setCnfPassword] = useState('');
-  async function postData(url = '', data = {}) {
-    // Default options are marked with *
-    const response = await fetch(url, {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'same-origin', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json',
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      redirect: 'follow', // manual, *follow, error
-      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify(data), // body data type must match "Content-Type" header
-    });
-    return response.json(); // parses JSON response into native JavaScript objects
-  }
-  useEffect(() => {
-    const emails = localStorage.getItem('email');
-    setEmail(emails);
-  }, [click]);
+  const dispatch = useDispatch();
 
   const closeModal = (e) => {
     e.preventDefault();
-    setClick(true);
     document.querySelector('.Emailmodal').classList.add('hideEmailModal');
     navigate('/');
     window.location.reload();
@@ -46,23 +26,16 @@ function EmailSignUp() {
     if (password !== cnfPassword) {
       return alert('Please enter a Same Password !');
     } else {
-      const formData = new FormData();
-      formData.append('', 'abc123');
-      formData.append('name', fullName);
-      formData.append('email', email);
-      // formData.append('username', 'abc123');
-      formData.append('password', password);
-      formData.append('phoneNumber', phoneNumber);
-      console.log(formData);
       await postData('http://35.165.105.151:3000/auth/registerViaEmail', {
         name: fullName,
-        email: email,
+        email: Email.Email,
         password: password,
         phoneNumber: phoneNumber,
       })
         .then((data) => {
-          console.log(data.data); // JSON data parsed by
-          localStorage.setItem('isloggedin', 'yes');
+          console.log(data); // JSON data parsed by
+          dispatch(login({ data }));
+          navigate('/');
         })
         .catch((error) => {
           console.error('Error:', error);
@@ -112,7 +85,7 @@ function EmailSignUp() {
               <input
                 type='text'
                 id='email'
-                value={email}
+                value={Email.Email}
                 readOnly
                 // onChange={(e) => setValue(e.target.value)}
                 className='form-control validate'
@@ -190,9 +163,7 @@ function EmailSignUp() {
                 data-error='wrong'
                 data-success='right'
                 htmlFor='confirm-password'
-              >
-                {/* Your password */}
-              </label>
+              ></label>
             </div>
           </div>
           <div className='modal-footer d-flex justify-content-center'>

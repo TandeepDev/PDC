@@ -21,3 +21,8 @@ body {
   animation-name: animatetop;
   animation-duration: 0.4s;
 }
+
+#EmailSignIn,
+#EmailSignIn-pass {
+  color: black;
+}

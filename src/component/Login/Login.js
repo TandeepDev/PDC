@@ -1,45 +1,24 @@
 import React from 'react';
 import { useState } from 'react';
-import $ from 'jquery';
-import { useNavigate } from 'react-router-dom';
-// import OtpPage from '../OtpPage/OtpPage';
 import './Login.css';
 import OtpPage from '../OtpPage/OtpPage';
 import { useEffect } from 'react';
 import EmailSignIn from '../Email-SignIn/Email-SignIn';
 import EmailSignUp from '../EmailSignUp/EmailSignUp';
-function Login() {
-  const navigate = useNavigate();
+import postData from '../../features/heplers';
+const Login = () => {
   const [value, setValue] = useState('');
   const [isotp, setIsotp] = useState(false);
   const [phone, setPhone] = useState('');
+
   const [email, setEmail] = useState('');
   const [click, setClick] = useState(false);
   const [isEmailExist, setIsEmailExist] = useState(false);
-
   const closeModal = (e) => {
-    // e.preventDefault();
     document.querySelector('.login-modal').classList.add('hideModal');
     setClick(true);
   };
-  useEffect(() => {}, [isotp, click]);
-  async function postData(url = '', data = {}) {
-    // Default options are marked with *
-    const response = await fetch(url, {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'same-origin', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json',
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      redirect: 'follow', // manual, *follow, error
-      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify(data), // body data type must match "Content-Type" header
-    });
-    return response.json(); // parses JSON response into native JavaScript objects
-  }
+  useEffect(() => {}, [isEmailExist, click]);
 
   const handleOtp = async (e) => {
     e.preventDefault();
@@ -56,43 +35,26 @@ function Login() {
       return alert('Please enter a valid phone number or Email !');
     } else if (phoneNo_pattern.test(value)) {
       // API CALL FOR PHONE NO
-      console.log('phone is ', value);
-      await postData('http://35.165.105.151:3000/auth/login', {
-        phone: value,
-      })
-        .then((data) => {
-          console.log(data); // JSON data parsed by `data.json()` call
-          localStorage.clear();
-          localStorage.setItem('userId', data.data.userId);
-          localStorage.setItem('otp', 123456);
-          setIsotp(true);
-          setPhone(value);
-          closeModal();
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-        });
+      setIsotp(true);
+      setPhone(value);
+      console.log('phone No is ', value);
     } else {
       console.log('here is call for email');
-      localStorage.clear();
       setEmail(value);
-      setIsotp(true);
-
       await postData('http://35.165.105.151:3000/auth/checkIFExists', {
         tag: 'email',
         value: value,
       })
         .then((data) => {
-          console.log(data.data); // JSON data parsed by `data.json()` call
+          console.log('data ', data.data);
           let check = data.data;
-          localStorage.clear();
-          localStorage.setItem('email', value);
+          setIsEmailExist(true);
           closeModal();
           if (check === true) {
-            setIsEmailExist(true);
           } else {
             setIsEmailExist(false);
           }
+          setIsotp(true);
         })
         .catch((error) => {
           console.error('Error:', error);
@@ -104,15 +66,15 @@ function Login() {
       {isotp === true ? (
         email !== '' ? (
           isEmailExist === false ? (
-            <EmailSignUp />
+            <EmailSignUp Email={email} />
           ) : (
-            <EmailSignIn />
+            <EmailSignIn Email={email} />
           )
         ) : (
-          <OtpPage />
+          <OtpPage phone={phone} />
         )
       ) : (
-        <div className='login-modal' id='modalLoginForm'>
+        <div className='login-modal hideModal' id='modalLoginForm'>
           <div className='modal-dialog' role='document'>
             <div className='modal-content'>
               <div className='modal-header text-center'>
@@ -144,9 +106,7 @@ function Login() {
                     data-error='wrong'
                     data-success='right'
                     htmlFor='defaultForm'
-                  >
-                    {/* Your email */}
-                  </label>
+                  ></label>
                 </div>
               </div>
               <div className='modal-footer d-flex justify-content-center'>
@@ -164,6 +124,6 @@ function Login() {
       )}
     </>
   );
-}
+};
 
 export default Login;

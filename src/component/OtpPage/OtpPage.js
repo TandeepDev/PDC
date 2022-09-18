@@ -1,42 +1,83 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import postData from '../../features/heplers';
+import { login } from '../../features/uesrSlice';
 import './OtpPage.css';
-function OtpPage() {
-  const [one, setOne] = useState('');
-  const [two, setTwo] = useState('');
-  const [three, setThree] = useState('');
-  const [forth, setForth] = useState('');
-  const [fifth, setFifth] = useState('');
-  const [sixth, setSixth] = useState('');
-  const [click, setClick] = useState(false);
+function OtpPage(phone) {
+  const num1 = useRef();
+  const num2 = useRef();
+  const num3 = useRef();
+  const num4 = useRef();
+  const num5 = useRef();
+  const num6 = useRef();
+  const handleOtp1Change = (value) => {
+    num2.current.focus();
+  };
+  const handleOtp2Change = (value) => {
+    num3.current.focus();
+  };
+  const handleOtp3Change = (value) => {
+    num4.current.focus();
+  };
+  const handleOtp4Change = (value) => {
+    num5.current.focus();
+  };
+  const handleOtp5Change = (value) => {
+    num6.current.focus();
+  };
+  const handleOtp6Change = (value) => {
+    // num4.current.focus();
+  };
+
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect(() => {}, [click]);
   const closeModal = (e) => {
     // e.preventDefault();
-    setClick(true);
     document.querySelector('.OtpPage').classList.add('hiddenOtp');
     navigate('/');
     window.location.reload();
   };
 
-  const handleOtpNo = (e) => {
+  const handleOtpNo = async (e) => {
     e.preventDefault();
-    const newOtp = one + two + three + forth + fifth + sixth;
+    const newOtp =
+      num1.current.value +
+      num2.current.value +
+      num3.current.value +
+      num4.current.value +
+      num5.current.value +
+      num6.current.value;
     console.log(newOtp);
-    console.log(typeof newOtp);
+    const phoneNumber = parseInt(phone);
+    const otp = parseInt(newOtp);
+    const realOtp = 123456;
+    await postData('http://35.165.105.151:3000/auth/login', {
+      phone: phoneNumber,
+    })
+      .then((data) => {
+        console.log(data); // JSON data parsed by `data.json()` call
+        if (otp === realOtp) {
+          dispatch(login({ data }));
+          navigate('/');
 
-    const Otp = localStorage.getItem('otp');
-    console.log(Otp);
-    console.log(typeof Otp);
-    if (Otp === newOtp) {
-      navigate('/');
-      localStorage.setItem('isloggedin', 'yes');
-      closeModal();
-    } else {
-      return alert('Please enter a valid Otp !');
-    }
+          // closeModal();
+        } else {
+          num1.current.value = '';
+          num2.current.value = '';
+          num3.current.value = '';
+          num4.current.value = '';
+          num5.current.value = '';
+          num6.current.value = '';
+          num1.current.focus();
+          return alert('Please enter a Correct Otp !');
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   };
   return (
     <div id='Otp-model' className='OtpPage'>
@@ -69,39 +110,69 @@ function OtpPage() {
                 <div className='d-flex align-items-center justify-content-between mt-2'>
                   <input
                     type='text'
-                    onChange={(e) => setOne(e.target.value)}
                     className='form-control'
                     placeholder=''
+                    maxLength='1'
+                    size='1'
+                    max='1'
+                    pattern='[0–9]{1}'
+                    onChange={(e) => handleOtp1Change(e.target.value)}
+                    ref={num1}
                   />
+
                   <input
                     type='text'
                     className='form-control'
-                    onChange={(e) => setTwo(e.target.value)}
-                    placeholder=''
+                    maxLength='1'
+                    size='1'
+                    max='1'
+                    pattern='[0–9]{1}'
+                    onChange={(e) => handleOtp2Change(e.target.value)}
+                    ref={num2}
                   />
+
                   <input
                     type='text'
-                    onChange={(e) => setThree(e.target.value)}
                     className='form-control'
-                    placeholder=''
+                    maxLength='1'
+                    size='1'
+                    max='1'
+                    pattern='[0–9]{1}'
+                    onChange={(e) => handleOtp3Change(e.target.value)}
+                    ref={num3}
                   />
+
                   <input
                     type='text'
-                    onChange={(e) => setForth(e.target.value)}
                     className='form-control'
-                    placeholder=''
+                    maxLength='1'
+                    size='1'
+                    max='1'
+                    pattern='[0–9]{1}'
+                    onChange={(e) => handleOtp4Change(e.target.value)}
+                    ref={num4}
                   />
+
                   <input
                     type='text'
-                    onChange={(e) => setFifth(e.target.value)}
                     className='form-control'
-                    placeholder=''
+                    maxLength='1'
+                    size='1'
+                    max='1'
+                    pattern='[0–9]{1}'
+                    onChange={(e) => handleOtp5Change(e.target.value)}
+                    ref={num5}
                   />
+
                   <input
                     type='text'
-                    onChange={(e) => setSixth(e.target.value)}
                     className='form-control'
-                    placeholder=''
+                    maxLength='1'
+                    size='1'
+                    max='1'
+                    pattern='[0–9]{1}'
+                    onChange={(e) => handleOtp6Change(e.target.value)}
+                    ref={num6}
                   />
                 </div>
               </div>
