@@ -41,7 +41,7 @@ const Login = () => {
     } else {
       console.log('here is call for email');
       setEmail(value);
-      await postData('http://35.165.105.151:3000/auth/checkIFExists', {
+      await postData('http://34.212.171.155:3000/auth/checkIFExists', {
         tag: 'email',
         value: value,
       })
