@@ -23,7 +23,7 @@ function EmailSignIn({ Email }) {
   };
   const emailSignIn = async (e) => {
     e.preventDefault();
-    await postData('http://35.165.105.151:3000/auth/emailLogin', {
+    await postData('http://34.212.171.155:3000/auth/emailLogin', {
       email: Email.Email,
       password: password,
     })
