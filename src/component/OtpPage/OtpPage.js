@@ -54,7 +54,7 @@ function OtpPage(phone) {
     const phoneNumber = parseInt(phone);
     const otp = parseInt(newOtp);
     const realOtp = 123456;
-    await postData('http://35.165.105.151:3000/auth/login', {
+    await postData('http://34.212.171.155:3000/auth/login', {
       phone: phoneNumber,
     })
       .then((data) => {
