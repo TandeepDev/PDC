@@ -9,28 +9,25 @@ function Contactus() {
             <div className='address details'>
               <i className='fas fa-map-marker-alt'></i>
               <div className='topic'>Address</div>
-              <div className='text-one'>Surkhet, NP12</div>
-              <div className='text-two'>Birendranagar 06</div>
+              <div className='text-one'>Chiliyanaula, Ranikhet</div>
+              <div className='text-two'>PIN - 263645</div>
             </div>
             <div className='phone details'>
               <i className='fas fa-phone-alt'></i>
               <div className='topic'>Phone</div>
-              <div className='text-one'>+0098 9893 5647</div>
-              <div className='text-two'>+0096 3434 5678</div>
+              <div className='text-one'>+91-9756506071</div>
+              <div className='text-two'>+91-9756506071</div>
             </div>
             <div className='email details'>
               <i className='fas fa-envelope'></i>
               <div className='topic'>Email</div>
-              <div className='text-one'>codinglab@gmail.com</div>
-              <div className='text-two'>info.codinglab@gmail.com</div>
+              <div className='text-one'>support.pdc@pdcare.com</div>
             </div>
           </div>
           <div className='right-side'>
             <div className='topic-text'>Send us a message</div>
             <p>
-              If you have any work from me or any types of quries related to my
-              tutorial, you can send me message from here. It's my pleasure to
-              help you.
+              For Daycare enquiry or any other issue, please write us. Our support person will reach out in shorter period of time
             </p>
             <form action='#'>
               <div className='Contactus-input-box'>

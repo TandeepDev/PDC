@@ -33,3 +33,12 @@ body {
 .hideEmailModal {
   display: none;
 }
+
+.modal-body {
+  color: #209EA6;
+}
+
+.register {
+  margin-left: 58%;
+  color:  #209EA6;
+}

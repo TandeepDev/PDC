@@ -41,6 +41,10 @@ body {
   display: none;
 }
 
+.modal-title {
+  color:  #209EA6;
+}
+
 .modal-backdrop {
   display: none;
 }
@@ -48,3 +52,9 @@ body {
 /* .Login-modal {
   display: none;
 } */
+
+
+.emailIcon {
+  margin-left: -5%;
+  color: gray;
+}

@@ -55,44 +55,55 @@ function Navbar() {
 
           <div className='collapse navbar-collapse' id='navbarSupportedContent'>
             <ul className='navbar-nav mr-auto'>
-              <li className='nav-item'>
-                <a className='nav-link' href='#about-us'>
-                  About us
-                </a>
-              </li>
-              <li className='nav-item dropdown'>
+
+            <li className='nav-item dropdown'>
                 <a
                   className='nav-link dropdown-toggle'
-                  href='#services'
+                  href='#'
                   id='navbarDropdown'
                   role='button'
                   data-toggle='dropdown'
                   aria-haspopup='true'
                   aria-expanded='false'
                 >
-                  Services
+                  SERVICES
                 </a>
                 <div className='dropdown-menu' aria-labelledby='navbarDropdown'>
-                  <a className='dropdown-item' href='#service1'>
-                    Service 1
+                  <a className='dropdown-item' href='#services'>
+                  VETERINARY
                   </a>
-                  <a className='dropdown-item' href='#service2'>
-                    Service 2
+                  <a className='dropdown-item' href='#services'>
+                    INSURANCE
                   </a>
-                  <a className='dropdown-item' href='#service3'>
-                    Service 3
+                  <a className='dropdown-item' href='#services'>
+                    SHOP
+                  </a>
+                </div>
+              </li>
+              <li className='nav-item dropdown'>
+                <a className='nav-link dropdown-toggle' href='#career'  data-toggle='dropdown'>
+                  CAREER
+                </a>
+                <div className='dropdown-menu' aria-labelledby='navbarDropdown'>
+                  <a className='dropdown-item'>
+                  WORKING IN PDC CENTERS
                   </a>
                 </div>
               </li>
 
-              <li className='nav-item active'>
-                <a className='nav-link' href='#career'>
-                  Career
+              <li className='nav-item'>
+                <a className='nav-link' href='#about-us'>
+                  ABOUT US
+                </a>
+              </li>
+              <li className='nav-item'>
+                <a className='nav-link' href='#locations'>
+                  LOCATIONS
                 </a>
               </li>
               <li className='nav-item'>
                 <a className='nav-link' href='#contact-us'>
-                  Contact us
+                  CONTACT US
                 </a>
               </li>
             </ul>

@@ -49,7 +49,7 @@ function EmailSignUp(Email) {
         <div className='modal-content'>
           <div className='modal-header text-center'>
             <h5 className='modal-title w-100 font-weight-bold'>
-              Login / SignUp
+             Register
             </h5>
             <button
               type='button'
@@ -63,15 +63,12 @@ function EmailSignUp(Email) {
           </div>
           <div className='modal-body mx-2'>
             <div className='md-form mb-3'>
-              <span className='font-weight-bold emailsignUpspan'>
-                Full Name :
-              </span>
               <input
                 type='text'
                 id='fullName'
                 onChange={(e) => setFullName(e.target.value)}
                 className='form-control validate'
-                placeholder='Enter Your Name'
+                placeholder='Fullname'
                 required
               />
               <label
@@ -81,7 +78,6 @@ function EmailSignUp(Email) {
               ></label>
             </div>
             <div className='md-form mb-3'>
-              <span className='font-weight-bold emailsignUpspan'>Email :</span>
               <input
                 type='text'
                 id='email'
@@ -98,15 +94,12 @@ function EmailSignUp(Email) {
               ></label>
             </div>
             <div className='md-form mb-3'>
-              <span className='font-weight-bold emailsignUpspan'>
-                Username :
-              </span>
               <input
                 type='text'
                 id='username'
                 onChange={(e) => setUsername(e.target.value)}
                 className='form-control validate'
-                placeholder='Enter Username'
+                placeholder='Username'
                 required
               />
               <label
@@ -116,14 +109,11 @@ function EmailSignUp(Email) {
               ></label>
             </div>
             <div className='md-form mb-3'>
-              <span className='font-weight-bold emailsignUpspan'>
-                Phone No. :
-              </span>
               <input
                 type='text'
                 id='phoneNumber'
                 onChange={(e) => setPhoneNumber(e.target.value)}
-                placeholder='Enter Your Phone No.'
+                placeholder='Phone number'
                 className='form-control validate'
                 required
               />
@@ -132,14 +122,11 @@ function EmailSignUp(Email) {
               </label>
             </div>
             <div className='md-form mb-3'>
-              <span className='font-weight-bold emailsignUpspan'>
-                Password :
-              </span>
               <input
                 type='password'
                 id='password'
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder='Enter Your Password'
+                placeholder='Password'
                 className='form-control validate'
                 required
               />
@@ -148,13 +135,10 @@ function EmailSignUp(Email) {
               </label>
             </div>
             <div className='md-form mb-3'>
-              <span className='font-weight-bold emailsignUpspan'>
-                Confirm Password :
-              </span>
-              <input
+                <input
                 type='password'
                 id='confirm-password'
-                placeholder='Enter Your Again Password'
+                placeholder='Confirm password'
                 onChange={(e) => setCnfPassword(e.target.value)}
                 className='form-control validate'
                 required

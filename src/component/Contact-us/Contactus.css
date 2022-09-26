@@ -4,6 +4,7 @@
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  color: rgba(0,0,0,.5);
 }
 .Contactus .Contactus-content {
   display: flex;
@@ -36,7 +37,7 @@
 }
 .Contactus-content .left-side .details i {
   font-size: 30px;
-  color: #3e2093;
+  color:  #209EA6;
   margin-bottom: 10px;
 }
 .Contactus-content .left-side .details .topic {
@@ -55,7 +56,7 @@
 .Contactus-content .right-side .topic-text {
   font-size: 23px;
   font-weight: 600;
-  color: #3e2093;
+  color:  #209EA6;
 }
 .right-side .Contactus-input-box {
   height: 50px;
@@ -91,12 +92,12 @@
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
-  background: #3e2093;
+  background:  #209EA6;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .Contactus-button input[type='button']:hover {
-  background: #5029bc;
+  background: #209EA6;
 }
 
 @media (max-width: 950px) {

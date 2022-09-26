@@ -30,16 +30,12 @@ function Home({ getObj }) {
     <div className='Home'>
       <Navbar getObj={getObj} />
       <SlideShow />
-      <h1 id='servies' className='big-headings'>
-        Services
-      </h1>
       <MidSection />
-      <h1 id='about-us' className='big-headings'>
-        About US
+      <Aboutus />            
+      <h1 id='servies' className='big-headings'>
       </h1>
-      <Aboutus />
       <h1 id='contact-us' className='big-headings'>
-        Contact US
+        CONTACT US
       </h1>
       <Contactus />
       <Footer />{' '}

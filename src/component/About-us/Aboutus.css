@@ -13,14 +13,14 @@
 }
 .bg-1 {
   flex: 1;
-  background-color: rgb(238, 241, 237);
+  background-color: rgb(32, 158, 166);
 }
 .bg-2 {
   flex: 1;
-  background-color: rgb(238, 241, 237);
+  background-color: rgb(32, 158, 166);
 }
 .about-container {
-  width: 85%;
+  width: 100%;
   min-height: 80vh;
   position: absolute;
   background-color: white;
@@ -49,7 +49,8 @@
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  font-size: 22px;
+  font-size: 1em;
+  color: rgba(0,0,0,.5);
 }
 .Aboutus-text-container h1 {
   font-size: 70px;
@@ -67,7 +68,7 @@
 }
 .Aboutus-text-container a:hover {
   background-color: transparent;
-  color: black;
+  color: rgba(0,0,0,.5);
   border: 2px solid rebeccapurple;
 }
 @media screen and (max-width: 1600px) {

@@ -5,22 +5,17 @@ function Aboutus() {
     <>
       <div className='Aboutus'>
         <div className='Aboutus-background-container'>
-          <div className='bg-1'></div>
-          <div className='bg-2'></div>
         </div>
         <div className='about-container'>
           <div className='image-container'>
-            <img src='./images/banner.jpeg' alt='' />
+            <img src='./images/aboutus.jpg' alt='' />
           </div>
 
           <div className='Aboutus-text-container'>
-            <h1>About us</h1>
+            <h1 id='about-us'>About us</h1>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi
-              porro rerum cupiditate expedita jbha svd gha scsdh gasc dasf dh
-              ghsvahsgd <br /> distinctio nisi nulla ipsum libero molestiae
-              minima Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Aliquid,ipsum libero{' '}
+              PDC "PET DAY CARE" is all about helping you with a complete caretaker of your pet. We provides many services so that it would be ease for you to be worried about your pet.
+               <br /> PDC not only provides a day care but also it take care of you dog health with active checkup with all our esteemed{' '}
             </p>
             <a href='#'>Read More</a>
           </div>

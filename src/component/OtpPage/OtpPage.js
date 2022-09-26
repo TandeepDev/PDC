@@ -96,10 +96,10 @@ function OtpPage(phone) {
             <form className='rounded bg-white shadow p-5'>
               <div className='logo'>
                 <img src='/images/logo.png' className='img-fluid' alt='logo' />
+                <h3 className='text-dark fw-bolder fs-4 mb-2'>
+                  Verify OTP
+                </h3>
               </div>
-              <h3 className='text-dark fw-bolder fs-4 mb-2'>
-                Otp Verification
-              </h3>
 
               <div className='fw-normal text-muted mb-4'>
                 Enter the verification code we sent to ******9123
@@ -188,7 +188,7 @@ function OtpPage(phone) {
               <div className='fw-normal text-muted mb-2'>
                 Didn't get the code ?
                 <a
-                  className='text-primary fw-bold text-decoration-none'
+                  className='resendOtp fw-bold text-decoration-none'
                   href='#'
                 >
                   Resend

@@ -53,7 +53,7 @@ function SlideShow() {
           <img src='/images/1st.jpg' alt='' />
         </div>
         <div className='slideshow-image'>
-          <img src='/images/2nd.png' alt='' />
+          <img src='/images/2nd.jpg' alt='' />
         </div>
         <div className='slideshow-image'>
           <img src='/images/3rd.jpg' alt='' />

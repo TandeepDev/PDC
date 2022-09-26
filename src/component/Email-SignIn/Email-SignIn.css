@@ -26,3 +26,8 @@ body {
 #EmailSignIn-pass {
   color: black;
 }
+
+.emailIcon {
+  margin-left: -5%;
+  color: gray;
+}

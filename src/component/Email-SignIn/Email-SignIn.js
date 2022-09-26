@@ -55,7 +55,7 @@ function EmailSignIn({ Email }) {
           </div>
           <div className='modal-body mx-1'>
             <div className='md-form mb-3'>
-              <i className='fas fa-envelope prefix grey-text'></i>
+              
               <input
                 type='text'
                 id='EmailSignIn'
@@ -63,6 +63,7 @@ function EmailSignIn({ Email }) {
                 readOnly
                 className='form-control validate'
               />
+              <i className='emailIcon fas fa-envelope prefix grey-text'></i>
               <label
                 data-error='wrong'
                 data-success='right'
@@ -70,7 +71,7 @@ function EmailSignIn({ Email }) {
               ></label>
             </div>
             <div className='md-form mb-1'>
-              <i className='fas fa-lock prefix grey-text'></i>
+              
               <input
                 type='password'
                 id='EmailSignIn-pass'
@@ -78,6 +79,7 @@ function EmailSignIn({ Email }) {
                 placeholder='Enter Your Password'
                 className='form-control validate'
               />
+              <i className='  emailIcon fas fa-lock prefix grey-text'></i>
               <label
                 data-error='wrong'
                 data-success='right'

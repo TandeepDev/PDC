@@ -93,7 +93,6 @@ const Login = () => {
               </div>
               <div className='modal-body mx-4'>
                 <div className='md-form mb-1'>
-                  <i className='fas fa-envelope prefix grey-text'></i>
                   <input
                     type='text'
                     id='defaultForm'
@@ -102,12 +101,16 @@ const Login = () => {
                     className='form-control validate'
                     placeholder='Phone No / Email'
                   />
+                   <i className='emailIcon fas fa-envelope prefix grey-text' ></i>
                   <label
                     data-error='wrong'
                     data-success='right'
                     htmlFor='defaultForm'
                   ></label>
                 </div>
+                <div><a className='register w-100 font-weight-bold' href='#' >
+                    New user ? Sign up to continue
+                  </a></div>
               </div>
               <div className='modal-footer d-flex justify-content-center'>
                 <button

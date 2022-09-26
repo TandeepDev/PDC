@@ -62,20 +62,22 @@ function MidSection() {
   }
   return (
     <div className='Mid-Section'>
-      <div className='upper-section'>
-        <h1>IT’S A NEW DAY IN PET CARE</h1>
-        <div className='box-images'>
+      <div className='upper-section'  id='services'>
+        <h1>WHAT ALL WE OFFERS YOU</h1>
+        <div className='box-images' >
           <img
             src='/images/1.png'
             onClick={handleClick}
             className='first-img active-img images'
             alt=''
+            id='first-img'
           />
           <img
             src='/images/2.png'
             onClick={handleClick}
             className='second-img images'
             alt=''
+            id='second-img'
           />
 
           <img
@@ -83,65 +85,58 @@ function MidSection() {
             onClick={handleClick}
             className='third-img images'
             alt=''
+            id='third-img'
+            
           />
           <img
             src='/images/4.png'
             onClick={handleClick}
             className='forth-img images'
             alt=''
+            id='forth-img'
+
           />
         </div>
         <div className='box-section'>
-          <h2 className='box-section-heading'>Veterinary Care</h2>
+          <h2 className='box-section-heading'>VETERINARY CARE</h2>
           <p className='box-section-para'>
-            At NewDay Veterinary Care located at Pet Paradise, care & compassion
-            guide everything we do. With 24 locations and more on the way,
-            NewDay combines comprehensive wellness plans, bundled pet care
-            services, cutting-edge technology, and experienced veterinary care
-            teams – all in a resort-style environment.
+            We are having an immediate assistance from our esteemed Vaternary doctors. 
+            All our partnered Vaternary doctors are highly qualified and all contains a good experience on curing all of our pets.
           </p>
         </div>
       </div>
       <div className='mid-section'>
         <div className='left-mid'>
-          <img src='./images/image1.jpeg' alt='' />
+          <img src='./images/image1.png' alt='' />
           <p>
-            With the Furever Loyal Rewards Program, it pays to be a pet and a
-            parent. Members earn “Paw Points” on every $1 spent. Use points to
-            get discounts on care offerings and holiday bookings.
+            We are active in multiple locations across india, for Booking / instant booking check availability on your nearby location.
           </p>
-          <a href='#'>SIGN UP TODAY</a>
+          <input type="text" name="checkpincode" /> <a href="#">Check Availability</a> 
         </div>
         <div className='divider-line'></div>
         <div className='right-mid'>
           <img src='./images/image2.png' alt='' />
           <p>
-            Since day one, Pet Paradise has been committed to helping paws in
-            need. Through Paradise with a Purpose partnerships, we’ve donated
-            over $350,000 and 290,000 pounds of pet food to over 100 charities.
+           Since you are our happy and satisfied customer, we offers you some token of happiness in return. Please login to checkout your more rewards.
           </p>
           <a href='#'>LEARN MORE</a>
         </div>
       </div>
-      <div className='parallex-box'>
-        <div className='parallax'></div>
-        <div className='parallax-line'>
-          <h3>Pet Dash</h3>
-          <p>A convenient new way to drop-off and pick-up your pet.</p>
-          <button>LEARN MORE</button>
-        </div>
-      </div>
+      
       <div className='bottom-section'>
         <div className='section-slider'>
           <div className='slide-container'>
-            <h3>What Pet Parents Say About Us</h3>
+            <h3>We are happy to have you feedback</h3>
+            <div className='feedbackDiv'>
+            <textarea className='feedback'> "Describe yourself here..." </textarea>
+            <button className='btnfeedback'> Submit feedback</button>
+            </div>
             <p className='testimonial'>
-              We love Pet Paradise and my dog does too, she doesn't get scared
-              when we drop her off. The employees are always friendly and I
-              appreciate how they report on how my dog's day went. They even
-              remember her by name.
+            A Place better to have a pet , all the services are A1.
+            Place is hygenic and well maintained. Pickup and delivery is also very good,
+            Supportive staff and they treat pet like their own.
             </p>
-            <span className='sourceWords'>J Thompson </span>{' '}
+            <span className='sourceWords'> - Tandeep Pujari</span>{' '}
           </div>
           <button className='btns prev-btn' onClick={handlePrev}>
             <i className='fas fa-chevron-left'></i>
