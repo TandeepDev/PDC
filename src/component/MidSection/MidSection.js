@@ -62,9 +62,9 @@ function MidSection() {
   }
   return (
     <div className='Mid-Section'>
-      <div className='upper-section'  id='services'>
+      <div className='upper-section' id='services'>
         <h1>WHAT ALL WE OFFERS YOU</h1>
-        <div className='box-images' >
+        <div className='box-images'>
           <img
             src='/images/1.png'
             onClick={handleClick}
@@ -86,7 +86,6 @@ function MidSection() {
             className='third-img images'
             alt=''
             id='third-img'
-            
           />
           <img
             src='/images/4.png'
@@ -94,14 +93,14 @@ function MidSection() {
             className='forth-img images'
             alt=''
             id='forth-img'
-
           />
         </div>
         <div className='box-section'>
           <h2 className='box-section-heading'>VETERINARY CARE</h2>
           <p className='box-section-para'>
-            We are having an immediate assistance from our esteemed Vaternary doctors. 
-            All our partnered Vaternary doctors are highly qualified and all contains a good experience on curing all of our pets.
+            We are having an immediate assistance from our esteemed Vaternary
+            doctors. All our partnered Vaternary doctors are highly qualified
+            and all contains a good experience on curing all of our pets.
           </p>
         </div>
       </div>
@@ -109,32 +108,39 @@ function MidSection() {
         <div className='left-mid'>
           <img src='./images/image1.png' alt='' />
           <p>
-            We are active in multiple locations across india, for Booking / instant booking check availability on your nearby location.
+            We are active in multiple locations across india, for Booking /
+            instant booking check availability on your nearby location.
           </p>
-          <input type="text" name="checkpincode" /> <a href="#">Check Availability</a> 
+          <input type='text' name='checkpincode' /> <br />{' '}
+          <a href='#'>Check Availability</a>
         </div>
         <div className='divider-line'></div>
         <div className='right-mid'>
           <img src='./images/image2.png' alt='' />
           <p>
-           Since you are our happy and satisfied customer, we offers you some token of happiness in return. Please login to checkout your more rewards.
+            Since you are our happy and satisfied customer, we offers you some
+            token of happiness in return. Please login to checkout your more
+            rewards.
           </p>
           <a href='#'>LEARN MORE</a>
         </div>
       </div>
-      
+
       <div className='bottom-section'>
         <div className='section-slider'>
           <div className='slide-container'>
             <h3>We are happy to have you feedback</h3>
             <div className='feedbackDiv'>
-            <textarea className='feedback'> "Describe yourself here..." </textarea>
-            <button className='btnfeedback'> Submit feedback</button>
+              <textarea className='feedback'>
+                {' '}
+                "Describe yourself here..."{' '}
+              </textarea>
+              <button className='btnfeedback'> Submit feedback</button>
             </div>
             <p className='testimonial'>
-            A Place better to have a pet , all the services are A1.
-            Place is hygenic and well maintained. Pickup and delivery is also very good,
-            Supportive staff and they treat pet like their own.
+              A Place better to have a pet , all the services are A1. Place is
+              hygenic and well maintained. Pickup and delivery is also very
+              good, Supportive staff and they treat pet like their own.
             </p>
             <span className='sourceWords'> - Tandeep Pujari</span>{' '}
           </div>

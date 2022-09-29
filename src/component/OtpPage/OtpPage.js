@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from 'react';
-import { useState } from 'react';
+import React, { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import postData from '../../features/heplers';
 import { login } from '../../features/uesrSlice';
 import './OtpPage.css';
 function OtpPage(phone) {
+  const API = 'http://54.148.17.22:3000';
   const num1 = useRef();
   const num2 = useRef();
   const num3 = useRef();
@@ -54,7 +54,8 @@ function OtpPage(phone) {
     const phoneNumber = parseInt(phone);
     const otp = parseInt(newOtp);
     const realOtp = 123456;
-    await postData('http://34.212.171.155:3000/auth/login', {
+
+    await postData(`${API}/login`, {
       phone: phoneNumber,
     })
       .then((data) => {
@@ -96,9 +97,7 @@ function OtpPage(phone) {
             <form className='rounded bg-white shadow p-5'>
               <div className='logo'>
                 <img src='/images/logo.png' className='img-fluid' alt='logo' />
-                <h3 className='text-dark fw-bolder fs-4 mb-2'>
-                  Verify OTP
-                </h3>
+                <h3 className='text-dark fw-bolder fs-4 mb-2'>Verify OTP</h3>
               </div>
 
               <div className='fw-normal text-muted mb-4'>
@@ -187,10 +186,7 @@ function OtpPage(phone) {
 
               <div className='fw-normal text-muted mb-2'>
                 Didn't get the code ?
-                <a
-                  className='resendOtp fw-bold text-decoration-none'
-                  href='#'
-                >
+                <a className='resendOtp fw-bold text-decoration-none' href='#'>
                   Resend
                 </a>
               </div>

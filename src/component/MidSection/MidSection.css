@@ -100,7 +100,7 @@
 .left-mid a,
 .right-mid a {
   font-family: 'Noto Sans', sans-serif;
-  color: #209EA6;
+  color: #209ea6;
   text-decoration: none;
   font-size: 0.7rem;
   font-weight: bold;
@@ -126,7 +126,7 @@
   width: 100%;
   height: auto;
   padding: 1rem;
-  background-color: #209EA6;
+  background-color: #209ea6;
   display: flex;
   justify-content: space-evenly;
   color: white;
@@ -163,7 +163,7 @@
 .slide-container h3 {
   font-size: 1.7rem;
   letter-spacing: 0.05em;
-  color: #209EA6;
+  color: #209ea6;
   margin-bottom: 15px;
 }
 
@@ -212,10 +212,10 @@
   border-radius: 4px;
   color: white;
   font-weight: 600;
-  background-color: #209EA6;
+  background-color: #209ea6;
   position: absolute;
-  margin-top:100px;
-  margin-left:2%;
+  margin-top: 100px;
+  margin-left: 2%;
   width: 162px;
 }
 
@@ -449,7 +449,7 @@
   .left-mid a,
   .right-mid a {
     font-family: 'Noto Sans', sans-serif;
-    color: #209EA6;
+    color: #209ea6;
     text-decoration: none;
     font-size: 0.7rem;
     font-weight: bold;
@@ -460,7 +460,7 @@
     width: 100%;
     height: auto;
     padding: 0.2rem;
-    background-color: #209EA6;
+    background-color: #209ea6;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -508,7 +508,7 @@
   .slide-container h3 {
     font-size: 1.5rem;
     letter-spacing: 0.05em;
-    color: #209EA6;
+    color: #209ea6;
     margin-bottom: 15px;
   }
 
@@ -592,7 +592,7 @@
   .slide-container h3 {
     font-size: 1.8rem;
     letter-spacing: 0.05em;
-    color: #209EA6;
+    color: #209ea6;
     margin-bottom: 15px;
   }
 
@@ -628,7 +628,6 @@
     left: 0.6rem;
   }
 
-  
   .bottom-form {
     width: 100%;
     height: fit-content;
@@ -654,7 +653,7 @@
   .slide-container h3 {
     font-size: 1.3rem;
     letter-spacing: 0.05em;
-    color: #209EA6;
+    color: #209ea6;
     margin-bottom: 15px;
   }
   .btns {
@@ -674,5 +673,30 @@
   }
   .prev-btn {
     left: 0.4rem;
+  }
+  .mid-section,
+  .bottom-section {
+    text-align: center;
+  }
+  .feedbackDiv {
+    position: relative;
+    margin-bottom: 50px;
+  }
+  .feedback {
+    width: 80%;
+  }
+  .btnfeedback {
+    position: absolute;
+    bottom: -50px;
+    left: 33%;
+  }
+  .sourceWords {
+    float: none;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 350px) {
+  .btnfeedback {
+    left: 25%;
   }
 }

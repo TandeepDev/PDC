@@ -7,6 +7,7 @@ import EmailSignIn from '../Email-SignIn/Email-SignIn';
 import EmailSignUp from '../EmailSignUp/EmailSignUp';
 import postData from '../../features/heplers';
 const Login = () => {
+  const API = 'http://54.148.17.22:3000';
   const [value, setValue] = useState('');
   const [isotp, setIsotp] = useState(false);
   const [phone, setPhone] = useState('');
@@ -41,7 +42,7 @@ const Login = () => {
     } else {
       console.log('here is call for email');
       setEmail(value);
-      await postData('http://34.212.171.155:3000/auth/checkIFExists', {
+      await postData(`${API}/auth/checkIFExists`, {
         tag: 'email',
         value: value,
       })
@@ -101,16 +102,18 @@ const Login = () => {
                     className='form-control validate'
                     placeholder='Phone No / Email'
                   />
-                   <i className='emailIcon fas fa-envelope prefix grey-text' ></i>
+                  <i className='emailIcon fas fa-envelope prefix grey-text'></i>
                   <label
                     data-error='wrong'
                     data-success='right'
                     htmlFor='defaultForm'
                   ></label>
                 </div>
-                <div><a className='register w-100 font-weight-bold' href='#' >
+                <div>
+                  <a className='register w-100 font-weight-bold' href='#'>
                     New user ? Sign up to continue
-                  </a></div>
+                  </a>
+                </div>
               </div>
               <div className='modal-footer d-flex justify-content-center'>
                 <button

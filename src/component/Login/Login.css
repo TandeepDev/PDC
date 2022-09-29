@@ -3,19 +3,18 @@ body {
 }
 
 .login-modal {
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
-  overflow: auto;
+  /* overflow: auto; */
   z-index: 999;
-  padding-top: 70px;
-  top: 0px;
+  top: 100px;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
-  width: 550px;
-  margin: auto;
+  width: 600px;
+  margin: auto 10px 10px 0;
   padding: 5px;
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
@@ -42,7 +41,7 @@ body {
 }
 
 .modal-title {
-  color:  #209EA6;
+  color: #209ea6;
 }
 
 .modal-backdrop {
@@ -52,7 +51,6 @@ body {
 /* .Login-modal {
   display: none;
 } */
-
 
 .emailIcon {
   margin-left: -5%;

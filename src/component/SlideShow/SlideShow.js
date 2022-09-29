@@ -45,20 +45,23 @@ function SlideShow() {
     }
     slides[slideIndex - 1].classList.add('active-slideshow');
   }
+  setInterval(function () {
+    plusSlides();
+  }, 8000);
   return (
     <div className='SlideShow'>
       {' '}
-      <div className='slideshow-images'>
-        <div className='slideshow-image active-slideshow'>
+      <div className='slideshow-images '>
+        <div className='slideshow-image active-slideshow fades'>
           <img src='/images/1st.jpg' alt='' />
         </div>
-        <div className='slideshow-image'>
+        <div className='slideshow-image fades'>
           <img src='/images/2nd.jpg' alt='' />
         </div>
-        <div className='slideshow-image'>
+        <div className='slideshow-image fades'>
           <img src='/images/3rd.jpg' alt='' />
         </div>
-        <div className='slideshow-image'>
+        <div className='slideshow-image fades'>
           <img src='/images/4th.jpg' alt='' />
         </div>
 

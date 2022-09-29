@@ -4,7 +4,7 @@
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  color: rgba(0,0,0,.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 .Contactus .Contactus-content {
   display: flex;
@@ -37,7 +37,7 @@
 }
 .Contactus-content .left-side .details i {
   font-size: 30px;
-  color:  #209EA6;
+  color: #209ea6;
   margin-bottom: 10px;
 }
 .Contactus-content .left-side .details .topic {
@@ -56,7 +56,7 @@
 .Contactus-content .right-side .topic-text {
   font-size: 23px;
   font-weight: 600;
-  color:  #209EA6;
+  color: #209ea6;
 }
 .right-side .Contactus-input-box {
   height: 50px;
@@ -92,18 +92,18 @@
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
-  background:  #209EA6;
+  background: #209ea6;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .Contactus-button input[type='button']:hover {
-  background: #209EA6;
+  background: #209ea6;
 }
 
 @media (max-width: 950px) {
   .Contactus {
-    width: 90%;
-    padding: 30px 40px 40px 35px;
+    width: 100%;
+    padding: 60px 40px 40px 35px;
   }
   .Contactus .Contactus-content .right-side {
     width: 75%;
@@ -118,6 +118,11 @@
   .Contactus .Contactus-content {
     flex-direction: column-reverse;
   }
+  .Contactus-content .right-side .topic-text {
+    text-align: center;
+    font-size: 25px;
+    margin: 10px auto;
+  }
   .Contactus .Contactus-content .left-side {
     width: 100%;
     flex-direction: row;
@@ -131,5 +136,10 @@
   .Contactus .Contactus-content .right-side {
     width: 100%;
     margin-left: 0;
+  }
+}
+@media (max-width: 620px) {
+  .Contactus {
+    margin-top: 100px;
   }
 }

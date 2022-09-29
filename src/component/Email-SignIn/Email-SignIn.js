@@ -6,9 +6,9 @@ import { login } from '../../features/uesrSlice';
 import './Email-SignIn.css';
 
 function EmailSignIn({ Email }) {
+  const API = 'http://54.148.17.22:3000';
   const navigate = useNavigate();
   const [click, setClick] = useState(false);
-  const [email, setEmail] = useState(Email.Email);
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   useEffect(() => {
@@ -23,7 +23,7 @@ function EmailSignIn({ Email }) {
   };
   const emailSignIn = async (e) => {
     e.preventDefault();
-    await postData('http://34.212.171.155:3000/auth/emailLogin', {
+    await postData(`${API}/emailLogin`, {
       email: Email.Email,
       password: password,
     })
@@ -55,7 +55,6 @@ function EmailSignIn({ Email }) {
           </div>
           <div className='modal-body mx-1'>
             <div className='md-form mb-3'>
-              
               <input
                 type='text'
                 id='EmailSignIn'
@@ -71,7 +70,6 @@ function EmailSignIn({ Email }) {
               ></label>
             </div>
             <div className='md-form mb-1'>
-              
               <input
                 type='password'
                 id='EmailSignIn-pass'

@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
-import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import postData from '../../features/heplers';
 import { login } from '../../features/uesrSlice';
 import './EmailSignUp.css';
 function EmailSignUp(Email) {
+  const API = 'http://54.148.17.22:3000';
   const navigate = useNavigate();
   const [fullName, setFullName] = useState('');
   const [username, setUsername] = useState('');
@@ -26,7 +26,7 @@ function EmailSignUp(Email) {
     if (password !== cnfPassword) {
       return alert('Please enter a Same Password !');
     } else {
-      await postData('http://34.212.171.155:3000/auth/registerViaEmail', {
+      await postData(`${API}/registerViaEmail`, {
         name: fullName,
         email: Email.Email,
         password: password,
@@ -48,9 +48,7 @@ function EmailSignUp(Email) {
       <div className='modal-dialog' role='document'>
         <div className='modal-content'>
           <div className='modal-header text-center'>
-            <h5 className='modal-title w-100 font-weight-bold'>
-             Register
-            </h5>
+            <h5 className='modal-title w-100 font-weight-bold'>Register</h5>
             <button
               type='button'
               className='close'
@@ -135,7 +133,7 @@ function EmailSignUp(Email) {
               </label>
             </div>
             <div className='md-form mb-3'>
-                <input
+              <input
                 type='password'
                 id='confirm-password'
                 placeholder='Confirm password'
