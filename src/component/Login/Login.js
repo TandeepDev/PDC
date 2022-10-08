@@ -7,7 +7,7 @@ import EmailSignIn from '../Email-SignIn/Email-SignIn';
 import EmailSignUp from '../EmailSignUp/EmailSignUp';
 import postData from '../../features/heplers';
 const Login = () => {
-  const API = 'http://54.148.17.22:3000';
+  const API = 'http://34.208.107.73:3000';
   const [value, setValue] = useState('');
   const [isotp, setIsotp] = useState(false);
   const [phone, setPhone] = useState('');
@@ -110,8 +110,9 @@ const Login = () => {
                   ></label>
                 </div>
                 <div>
-                  <a className='register w-100 font-weight-bold' href='#'>
-                    New user ? Sign up to continue
+                  {/* <br /> */}
+                  <a className='otptagline' href='#'>
+                    Sign up to continue
                   </a>
                 </div>
               </div>

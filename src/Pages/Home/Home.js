@@ -31,9 +31,8 @@ function Home({ getObj }) {
       <Navbar getObj={getObj} />
       <SlideShow />
       <MidSection />
-      <Aboutus />            
-      <h1 id='servies' className='big-headings'>
-      </h1>
+      <Aboutus />
+      <h1 id='servies' className='big-headings'></h1>
       <h1 id='contact-us' className='big-headings'>
         CONTACT US
       </h1>

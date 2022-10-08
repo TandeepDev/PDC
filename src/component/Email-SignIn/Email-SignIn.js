@@ -6,7 +6,7 @@ import { login } from '../../features/uesrSlice';
 import './Email-SignIn.css';
 
 function EmailSignIn({ Email }) {
-  const API = 'http://54.148.17.22:3000';
+  const API = 'http://34.208.107.73:3000';
   const navigate = useNavigate();
   const [click, setClick] = useState(false);
   const [password, setPassword] = useState('');

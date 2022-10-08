@@ -53,6 +53,41 @@ body {
 } */
 
 .emailIcon {
-  margin-left: -5%;
+  margin-left: -3%;
   color: gray;
+}
+.otptagline {
+  font-size: 21px;
+  text-align: left;
+  font-weight: bold;
+  margin-top: 15px !important;
+}
+
+@media (max-width: 602px) {
+  .login-modal {
+    width: 100%;
+    /* height: max-content; */
+    top: 90px;
+    overflow: auto;
+  }
+  .modal-content {
+    width: 350px !important;
+    height: 380px;
+    padding: 0;
+    margin: auto auto;
+  }
+  #defaultForm {
+    width: 100% !important;
+    margin-bottom: 15px;
+    font-size: 15px;
+    align-items: center;
+  }
+
+  .emailIcon {
+    margin-left: -15% !important;
+  }
+  .otptagline {
+    font-size: 16px;
+    /* margin-top: 15px !important; */
+  }
 }

@@ -5,7 +5,7 @@ import postData from '../../features/heplers';
 import { login } from '../../features/uesrSlice';
 import './OtpPage.css';
 function OtpPage(phone) {
-  const API = 'http://54.148.17.22:3000';
+  const API = 'http://34.208.107.73:3000';
   const num1 = useRef();
   const num2 = useRef();
   const num3 = useRef();

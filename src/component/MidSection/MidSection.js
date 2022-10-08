@@ -131,10 +131,10 @@ function MidSection() {
           <div className='slide-container'>
             <h3>We are happy to have you feedback</h3>
             <div className='feedbackDiv'>
-              <textarea className='feedback'>
-                {' '}
-                "Describe yourself here..."{' '}
-              </textarea>
+              <textarea
+                className='feedback'
+                placeholder='Describe yourself here...'
+              ></textarea>
               <button className='btnfeedback'> Submit feedback</button>
             </div>
             <p className='testimonial'>

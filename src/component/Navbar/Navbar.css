@@ -80,6 +80,10 @@ body {
   font-weight: 600;
   background-color: #209ea6;
 }
+.hideModal {
+  height: 0;
+}
+
 @media only screen and (min-width: 1000px) and (min-width: 1800px) {
   .right-btn {
     position: absolute;
@@ -89,8 +93,8 @@ body {
 }
 @media only screen and (max-width: 600px) {
   .navbar {
-    min-height: 15%;
-    height: auto;
+    min-height: 13%;
+    max-height: auto;
   }
   .navbar-nav {
     /* margin: 5px auto; */
@@ -102,10 +106,13 @@ body {
   }
   .fixed-right {
     position: absolute !important;
-    right: 10px !important;
+    right: 40px !important;
     top: 20px !important;
   }
 
+  .navbar-toggler-icon {
+    font-size: 15px;
+  }
   .navbar-brand img {
     position: absolute;
     top: 5px;
@@ -114,8 +121,9 @@ body {
     height: 80px;
   }
   .btn {
-    width: 250px;
+    width: fit-content;
     height: 50px;
+    padding: 15px;
     font-size: 11px;
     margin-left: 70px;
     margin-top: 15px;

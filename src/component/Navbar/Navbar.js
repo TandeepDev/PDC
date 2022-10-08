@@ -18,6 +18,7 @@ function Navbar() {
   };
   const backToTop = (e) => {
     e.preventDefault();
+    document.querySelector('.collapse').classList.add('hideModal');
     window.scrollTo({
       top: 0,
       behavior: 'smooth', // for smoothly scrolling

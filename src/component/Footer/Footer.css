@@ -1,8 +1,7 @@
 footer {
-  background: #209EA6;
+  background: #209ea6;
   color: #fff;
   font-weight: 400;
-  font-family: 'freight-sans-pro', sans-serif;
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0.05em;
@@ -168,7 +167,7 @@ footer h4 {
   display: block;
 }
 a {
-  color: #209EA6;
+  color: #209ea6;
   -webkit-transition: color 0.5s ease;
   transition: color 0.5s ease;
   color: #337ab7;
