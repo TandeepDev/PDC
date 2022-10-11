@@ -16,7 +16,7 @@ body {
 .Navbar {
   width: 100%;
   height: fit-content;
-  position: fixed !important; /* Set the navbar to fixed position */
+  /*position: fixed !important; /* Set the navbar to fixed position */
   top: 0 !important;
   left: 0;
   z-index: 999;

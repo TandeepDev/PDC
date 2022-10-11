@@ -26,7 +26,7 @@ function EmailSignUp(Email) {
     if (password !== cnfPassword) {
       return alert('Please enter a Same Password !');
     } else {
-      await postData('http://34.212.171.155:3000/auth/registerViaEmail', {
+      await postData('http://54.148.17.22:3000/auth/registerViaEmail', {
         name: fullName,
         email: Email.Email,
         password: password,

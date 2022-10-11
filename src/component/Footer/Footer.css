@@ -6,6 +6,9 @@ footer {
   font-weight: 500;
   font-style: normal;
   letter-spacing: 0.05em;
+  clear: both;
+  height: 200px;
+ 
 }
 footer h4 {
   font-family: 'freight-sans-pro', sans-serif;
@@ -19,7 +22,7 @@ footer h4 {
   display: block;
 }
 footer .container-fluid {
-  max-width: 1350px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 30px;
   padding-right: 15px;
@@ -166,6 +169,7 @@ footer h4 {
   text-align: center;
   margin: 0 auto;
   display: block;
+  float:bottom;
 }
 a {
   color: #209EA6;

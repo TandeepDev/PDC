@@ -23,7 +23,7 @@ function EmailSignIn({ Email }) {
   };
   const emailSignIn = async (e) => {
     e.preventDefault();
-    await postData('http://34.212.171.155:3000/auth/emailLogin', {
+    await postData('http://54.148.17.22:3000/auth/emailLogin', {
       email: Email.Email,
       password: password,
     })
@@ -40,9 +40,9 @@ function EmailSignIn({ Email }) {
       <div className='modal-dialog' role='document'>
         <div className='modal-content'>
           <div className='modal-header text-center'>
-            <h5 className='modal-title w-100 font-weight-bold'>
+            <a className='modal-title w-100 font-weight-bold'>
               Login / SignUp
-            </h5>
+            </a>
             <button
               type='button'
               className='close'
