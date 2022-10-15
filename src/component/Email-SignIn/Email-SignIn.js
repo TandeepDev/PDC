@@ -23,7 +23,7 @@ function EmailSignIn({ Email }) {
   };
   const emailSignIn = async (e) => {
     e.preventDefault();
-    await postData('http://54.148.17.22:3000/auth/emailLogin', {
+    await postData('http://18.236.122.69:3000/auth/emailLogin', {
       email: Email.Email,
       password: password,
     })
@@ -40,9 +40,7 @@ function EmailSignIn({ Email }) {
       <div className='modal-dialog' role='document'>
         <div className='modal-content'>
           <div className='modal-header text-center'>
-            <a className='modal-title w-100 font-weight-bold'>
-              Login / SignUp
-            </a>
+            <a className='modal-title w-100 font-weight-bold'>Login / SignUp</a>
             <button
               type='button'
               className='close'
@@ -55,7 +53,6 @@ function EmailSignIn({ Email }) {
           </div>
           <div className='modal-body mx-1'>
             <div className='md-form mb-3'>
-              
               <input
                 type='text'
                 id='EmailSignIn'
@@ -71,7 +68,6 @@ function EmailSignIn({ Email }) {
               ></label>
             </div>
             <div className='md-form mb-1'>
-              
               <input
                 type='password'
                 id='EmailSignIn-pass'
